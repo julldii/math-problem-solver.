@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Math Problem Solver</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        #container {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #0074cc;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056a9;
+        }
+
+        #result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Math Problem Solver</h1>
+    <div id="container">
+        <input type="text" id="problem" placeholder="Enter a math problem" />
+        <button onclick="solve()">Solve</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function solve() {
+            const problem = document.getElementById("problem").value;
+            try {
+                const result = eval(problem);
+                document.getElementById("result").textContent = `Result: ${result}`;
+            } catch (error) {
+                document.getElementById("result").textContent = "Invalid input or error.";
+            }
+        }
+    </script>
+</body>
+</html>
